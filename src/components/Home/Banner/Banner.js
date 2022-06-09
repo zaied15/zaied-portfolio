@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import zaied from "../../../images/zaied.jpeg";
 
 const Banner = () => {
-  let TxtType = function (el, toRotate, period) {
+  let txtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -13,7 +13,7 @@ const Banner = () => {
     this.isDeleting = false;
   };
 
-  TxtType.prototype.tick = function () {
+  txtType.prototype.tick = function () {
     let i = this.loopNum % this.toRotate.length;
     let fullTxt = this.toRotate[i];
 
@@ -52,7 +52,7 @@ const Banner = () => {
       let toRotate = elements[i].getAttribute("data-type");
       let period = elements[i].getAttribute("data-period");
       if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
+        new txtType(elements[i], JSON.parse(toRotate), period);
       }
     }
     // INJECT CSS
@@ -64,7 +64,11 @@ const Banner = () => {
   return (
     <div className="hero min-h-screen bg-base-100">
       <div className="hero-content flex-col lg:flex-row lg:justify-between">
-        <img src={zaied} className="max-w-lg rounded-lg shadow-2xl" alt="" />
+        <img
+          src={zaied}
+          className="w-full lg:max-w-lg rounded-lg shadow-2xl"
+          alt=""
+        />
         <div>
           <p>Hello, I'm</p>
           <h1 className="text-5xl font-bold">Md. Anwar Zaied</h1>
@@ -78,7 +82,9 @@ const Banner = () => {
               <span className="wrap"></span>
             </a>
           </h1>
-          <button className="btn contact-btn mt-5">Contact Me</button>
+          <a href="#contact">
+            <button className="btn contact-btn mt-5">Contact Me</button>
+          </a>
         </div>
       </div>
     </div>

@@ -1,25 +1,17 @@
 import React from "react";
 
-const Project = ({ img, title, desc }) => {
+const Project = ({ img, title, desc, link }) => {
   return (
-    // <div class="card max-w-lg bg-base-100 shadow-xl image-full">
-    //   <figure>
-    //     <img src={img} alt="" />
-    //   </figure>
-    //   <div class="card-body">
-    //     <h2 class="card-title">{title}</h2>
-    //     <p>{desc}</p>
-    //     <div class="card-actions justify-end">
-    //       <button class="btn btn-primary">Buy Now</button>
-    //     </div>
-    //   </div>
-    // </div>
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card w-full lg:w-96 bg-base-100 shadow-xl my-5 lg:my-0">
       <figure>
-        <img src={img} className="h-100" alt="Shoes" />
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <img src={img} className="border lg:h-64" alt="Shoes" />
+        </a>
       </figure>
-      <div class="card-body">
-        <h2 class="card-title">{title}</h2>
+      <div className="card-body">
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <h2 className="card-title text-primary">{title}</h2>
+        </a>
         <p>{desc}</p>
       </div>
     </div>
