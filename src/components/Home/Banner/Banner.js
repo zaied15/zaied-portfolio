@@ -68,7 +68,7 @@ const Banner = () => {
         <div>
           <p>Hello, I'm</p>
           <h1 className="text-5xl font-bold">Md. Anwar Zaied</h1>
-          <h1 className="h-7">
+          <h1 className="h-7 my-3">
             <a
               to=""
               className="typewrite text-xl"
@@ -78,7 +78,7 @@ const Banner = () => {
               <span className="wrap"></span>
             </a>
           </h1>
-          <button className="btn btn-neutral mt-5">Contact Me</button>
+          <button className="btn contact-btn mt-5">Contact Me</button>
         </div>
       </div>
     </div>
